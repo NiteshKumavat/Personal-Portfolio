@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Portfolio</title>
+    <link rel="stylesheet" href="static/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="project.html" class="active"><i class="fas fa-code"></i> Projects</a>
+            <a href="resume"><i class="fas fa-file"></i> Resume</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">My Projects</h1>
+
+        {% for language, project in projects.items() %}
+        
+        <section class="project-category">
+            <h2 class="category-title"><i class="fas fa-globe"></i> {{language}}</h2>
+            <div class="projects-grid">
+                {% for project_name, (description, image) in project.items() %}
+                <article class="project-card">
+                    <div class="image-container">
+                        
+                        <img src="{{ url_for('static', filename=image)}}" alt="Portfolio Website Screenshot" loading="lazy" />
+                    </div>
+                    <div class="project-content">
+                        <h3>{{project_name}}</h3>
+                        <p class="project-tech">{{language}}</p>
+                        <p class="project-description">{{description}}</p>
+                        <div class="project-links">
+                            <a class="project-link" href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+                
+            </div>
+        </section>
+        {% endfor %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,125 @@
+:root {
+    --primary-color: #2d3436;
+    --secondary-color: #0984e3;
+    --accent-color: #00b894;
+    --light-bg: #f5f6fa;
+    --dark-text: #2d3436;
+    --light-text: #f5f6fa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--dark-text);
+    color: var(--light-bg);
+    line-height: 1.7;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+
+/* Main Content */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    height: calc(100vh - 60px);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.image{
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    border: 3px solid white;
+}
+
+.image img {
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 868px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1.2rem;
+    }
+}
+
+#about-me{
+    color: aquamarine;
+    border: none;
+    background: none;
+    text-decoration:underline;
+    margin-top: 10px;
+    padding: 7px;
+}
+
+#about-me:active{
+    color: #d78080;
+}
